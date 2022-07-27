@@ -1,0 +1,218 @@
+// variable
+$blue1: #0d4dfd;
+$blue2: #020f32;
+$blue3: #9eb7fe;
+$white: white;
+$white2: #f4f4f4;
+$grey1: #777;
+$grey2: #474747;
+
+$paddin-sm: 30px;
+
+$text-lg: 20px;
+$text-xl: 30px;
+$text-2xl: 40px;
+
+// mixings
+@mixin only_mobile_devices {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+@mixin only_desktop_devices {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+@mixin cardPicture($picture) {
+  .card_picture {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.7123891793045343) 0%,
+        rgba(115, 114, 114, 0) 67%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url($picture);
+  }
+}
+
+@mixin animation {
+  animation-duration: 1.8s;
+}
+
+@mixin boxShadow {
+  -webkit-box-shadow: 1px 16px 39px 26px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 16px 39px 26px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: ubuntu;
+}
+
+body {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $blue1;
+  // height: 0px;
+  padding: $paddin-sm;
+  &_title {
+    color: $white;
+    font-size: $text-xl;
+  }
+  section {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  &_menu {
+    @include only_mobile_devices();
+    svg {
+      margin: 0;
+      padding: 0;
+      color: $white;
+    }
+    &_desktop {
+      @include only_desktop_devices();
+      ul {
+        list-style: none;
+        li {
+          display: inline-block;
+          margin-left: 30px;
+          a {
+            color: $white;
+            font-size: $text-lg;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .header_menu--fixed {
+    height: 100vh;
+    min-width: 100%;
+    background-color: $blue1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    justify-content: end;
+    padding: $paddin-sm;
+    display: none;
+    z-index: 1;
+  }
+}
+
+.main {
+  padding: $paddin-sm;
+  padding-top: 7%;
+  color: $blue2;
+  .containerFirst {
+    background-image: url("./public/blob-scene-haikei.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: -$paddin-sm;
+    margin-top: -8%;
+    padding-top: 7%;
+  }
+  .containerFirst_child {
+    padding: $paddin-sm;
+    @include animation();
+    .containerFirst_title {
+      font-size: $text-2xl;
+    }
+    p {
+      font-size: $text-lg;
+      color: $grey1;
+      font-weight: 600;
+      margin: 20px 0 20px 0;
+    }
+    h4 {
+      font-size: $text-xl;
+      text-shadow: 0 0 3px $white2, 0 0 5px;
+    }
+    .containerFirst_button {
+      padding: 10px;
+      border: solid 2px $blue1;
+      border-radius: 10px;
+      color: $blue1;
+      font-size: $text-lg;
+      cursor: pointer;
+    }
+  }
+  .main_card--container {
+    @include animation();
+    margin-bottom: 5%;
+    
+    .main_card {
+      background-color: $white2;
+      border-radius: 20px;
+      height: 300px;
+      width: 170px;
+      margin: auto;
+      @include boxShadow();
+      &:nth-child(1) {
+        transform: rotate(-20deg);
+        @include cardPicture("./public/pic1.jpg");
+      }
+      &:nth-child(2) {
+        transform: rotate(20deg);
+        margin-top: -300px;
+        @include cardPicture("./public/pic2.jpg");
+      }
+      .card_picture {
+        background-color: rgb(0, 0, 0);
+        background-size: contain;
+        height: 85%;
+        border-radius: 20px 20px 5px 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .card_title {
+          color: $white;
+          margin: 10px;
+          h3 {
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .card_footer {
+        margin-top: 5px;
+        justify-content: space-evenly;
+        &--reject {
+          color: red;
+        }
+        &--hire {
+          color: green;
+        }
+      }
+    }
+  }
+
+  .containerSecond {
+    padding-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .containerSecond_card {
+      @include boxShadow();
+      width: 25%;
+      border-radius: 20px;
+      background-color: $white;
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+}

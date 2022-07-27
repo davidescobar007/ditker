@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: ubuntu;
+}
+
+body {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0d4dfd;
+  padding: 30px;
+}
+.header_title {
+  color: white;
+  font-size: 30px;
+}
+.header section {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media (min-width: 768px) {
+  .header_menu {
+    display: none;
+  }
+}
+.header_menu svg {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+@media (max-width: 767px) {
+  .header_menu_desktop {
+    display: none;
+  }
+}
+.header_menu_desktop ul {
+  list-style: none;
+}
+.header_menu_desktop ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+.header_menu_desktop ul li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.header .header_menu--fixed {
+  height: 100vh;
+  min-width: 100%;
+  background-color: #0d4dfd;
+  position: fixed;
+  top: 0;
+  right: 0;
+  justify-content: end;
+  padding: 30px;
+  display: none;
+  z-index: 1;
+}
+
+.main {
+  padding: 30px;
+  padding-top: 7%;
+  color: #020f32;
+}
+.main .containerFirst {
+  background-image: url("./public/blob-scene-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -30px;
+  margin-top: -8%;
+  padding-top: 7%;
+}
+.main .containerFirst_child {
+  padding: 30px;
+  animation-duration: 1.8s;
+}
+.main .containerFirst_child .containerFirst_title {
+  font-size: 40px;
+}
+.main .containerFirst_child p {
+  font-size: 20px;
+  color: #777;
+  font-weight: 600;
+  margin: 20px 0 20px 0;
+}
+.main .containerFirst_child h4 {
+  font-size: 30px;
+  text-shadow: 0 0 3px #f4f4f4, 0 0 5px;
+}
+.main .containerFirst_child .containerFirst_button {
+  padding: 10px;
+  border: solid 2px #0d4dfd;
+  border-radius: 10px;
+  color: #0d4dfd;
+  font-size: 20px;
+  cursor: pointer;
+}
+.main .main_card--container {
+  animation-duration: 1.8s;
+  margin-bottom: 5%;
+}
+.main .main_card--container .main_card {
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  height: 300px;
+  width: 170px;
+  margin: auto;
+  -webkit-box-shadow: 1px 16px 39px 26px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 16px 39px 26px rgba(0, 0, 0, 0.1);
+}
+.main .main_card--container .main_card:nth-child(1) {
+  transform: rotate(-20deg);
+}
+.main .main_card--container .main_card:nth-child(1) .card_picture {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7123891793) 0%, rgba(115, 114, 114, 0) 67%, rgba(255, 255, 255, 0) 100%), url("./public/pic1.jpg");
+}
+.main .main_card--container .main_card:nth-child(2) {
+  transform: rotate(20deg);
+  margin-top: -300px;
+}
+.main .main_card--container .main_card:nth-child(2) .card_picture {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7123891793) 0%, rgba(115, 114, 114, 0) 67%, rgba(255, 255, 255, 0) 100%), url("./public/pic2.jpg");
+}
+.main .main_card--container .main_card .card_picture {
+  background-color: rgb(0, 0, 0);
+  background-size: contain;
+  height: 85%;
+  border-radius: 20px 20px 5px 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.main .main_card--container .main_card .card_picture .card_title {
+  color: white;
+  margin: 10px;
+}
+.main .main_card--container .main_card .card_picture .card_title h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.main .main_card--container .main_card .card_footer {
+  margin-top: 5px;
+  justify-content: space-evenly;
+}
+.main .main_card--container .main_card .card_footer--reject {
+  color: red;
+}
+.main .main_card--container .main_card .card_footer--hire {
+  color: green;
+}
+.main .containerSecond {
+  padding-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main .containerSecond .containerSecond_card {
+  -webkit-box-shadow: 1px 16px 39px 26px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 16px 39px 26px rgba(0, 0, 0, 0.1);
+  width: 25%;
+  border-radius: 20px;
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */
